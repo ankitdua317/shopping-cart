@@ -6,10 +6,17 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var expressHbs = require('express-handlebars');
 var mongoose = require('mongoose');
+
+
+
+
+
 var routes = require('./routes/index');
 
 var app = express();
 mongoose.connect('mongodb://localhost:27017/shopping');
+
+
 
 // view engine setup
 app.engine('.hbs' , expressHbs({defaultLayout : 'layout' , extname : '.hbs'}));
