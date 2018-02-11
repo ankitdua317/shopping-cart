@@ -6,9 +6,12 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var expressHbs = require('express-handlebars');
 
+
 var routes = require('./routes/index');
 
 var app = express();
+
+
 
 // view engine setup
 app.engine('.hbs' , expressHbs({defaultLayout : 'layout' , extname : '.hbs'}));
