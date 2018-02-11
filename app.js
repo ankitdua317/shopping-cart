@@ -7,8 +7,8 @@ var bodyParser = require('body-parser');
 var expressHbs = require('express-handlebars');
 var mongoose = require('mongoose');
 var session = require('express-session');
- // var passport = require('passport');
- // var flash = require('connect-flash');
+ var passport = require('passport');
+ var flash = require('connect-flash');
 
 
 
@@ -18,6 +18,7 @@ var routes = require('./routes/index');
 
 var app = express();
 mongoose.connect('mongodb://localhost:27017/shopping');
+require('./config/passport');
 
 
 
@@ -32,9 +33,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session({secret : 'diwanshankit' , resave : false , saveUninitialized: false}));
-//  app.use(flash());
-// app.use(passport.intialize());
-// app.use(passport.session());
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
