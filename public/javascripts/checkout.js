@@ -1,6 +1,10 @@
-Stripe.setPublishableKey('pk_test_WpjOIQPjtAoLu93TnlyHMZGl');
+Stripe.setPublishableKey('pk_test_5hd9pAaKwEFWkMNs8LrVs6TN');
+//pk_test_5hd9pAaKwEFWkMNs8LrVs6TN
+//pk_test_WpjOIQPjtAoLu93TnlyHMZGl
 
-var $form = $('checkout-form');
+//sk_test_5SX4S1t84XAHTubC5nmJvN5a
+
+var $form = $('#checkout-form');
 
 $form.submit(function(event){
   $('#charge-error').addClass('hidden');
